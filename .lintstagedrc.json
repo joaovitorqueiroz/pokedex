@@ -1,0 +1,14 @@
+{
+  "*.ts":[
+    "npx eslint . --ext .ts"
+  ],
+  "*.tsx":[
+    "npx eslint . --ext .tsx"
+  ],
+  "*.js":[
+    "npx eslint . --ext .js"
+  ],
+  "*.jsx":[
+    "npx eslint . --ext .jsx"
+  ]
+}
