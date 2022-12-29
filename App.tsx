@@ -1,11 +1,11 @@
 import { ThemeProvider } from 'styled-components/native';
-import Home from './src/screens/Home';
+import { Routes } from './src/routes';
 import themeDefault from './src/styles/themes/default';
 
 const App = () => {
   return (
     <ThemeProvider theme={themeDefault}>
-      <Home />
+      <Routes />
     </ThemeProvider>
   );
 };

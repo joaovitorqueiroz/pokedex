@@ -4,7 +4,20 @@ import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
 
+import android.os.Bundle;
+
 public class MainActivity extends ReactActivity {
+
+  /**
+   * This change is required to avoid crashes related to View state being not persisted 
+   * consistently across Activity restarts. 
+   *
+   * https://reactnavigation.org/docs/getting-started/#installing-dependencies-into-a-bare-react-native-project
+   */
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(null);
+  }
 
   /**
    * Returns the name of the main component registered from JavaScript. This is used to schedule
