@@ -1,6 +1,6 @@
 import { ThemeProvider } from 'styled-components/native';
-import { Routes } from './src/routes';
-import themeDefault from './src/styles/themes/default';
+import { Routes } from 'src/routes';
+import themeDefault from 'src/styles/themes/default';
 
 const App = () => {
   return (
