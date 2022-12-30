@@ -1,14 +1,16 @@
-import { Container, TextContent, Title, Pokeball } from './styles';
+import { Container, TextContent, PokeBall, Image } from './styles';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import pokeballPath from 'src/assets/pokeball_grey.png';
+import pokeBallPath from 'src/assets/poke_ball_grey.png';
+
+import logoPath from 'src/assets/logo.png';
 
 const Header: React.FC = () => {
   return (
     <Container>
       <SafeAreaView />
-      <Pokeball source={pokeballPath} />
-      <Title>Pokédex</Title>
+      <PokeBall source={pokeBallPath} />
+      <Image source={logoPath} />
       <TextContent>Search for a Pokémon by name</TextContent>
     </Container>
   );

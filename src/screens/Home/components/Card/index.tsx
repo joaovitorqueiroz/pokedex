@@ -14,7 +14,7 @@ import {
   PokemonImage,
 } from './styles';
 
-import pokeBallPath from 'src/assets/pokeball_white.png';
+import pokeBallPath from 'src/assets/poke_ball_white.png';
 
 const types = ['Normal', 'Bug'];
 
