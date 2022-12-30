@@ -19,7 +19,7 @@ import pokeBallPath from 'src/assets/poke_ball_white.png';
 const types = ['Normal', 'Bug'];
 
 const Card: React.FC = () => {
-  const pallet = usePokemonColorPalette('green');
+  const pallet = usePokemonColorPalette('white');
   const { uriImagePng } = useUriImagePokemon('1');
 
   return (
