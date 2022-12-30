@@ -1,7 +1,7 @@
 import { TextInputProps } from 'react-native';
 import { Container, IconSearch, InputText } from './styles';
 
-const Searchbar: React.FC<TextInputProps> = props => {
+const SearchBar: React.FC<TextInputProps> = props => {
   return (
     <Container>
       <IconSearch />
@@ -10,4 +10,4 @@ const Searchbar: React.FC<TextInputProps> = props => {
   );
 };
 
-export default Searchbar;
+export default SearchBar;

@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { StatusBar, View } from 'react-native';
 import { Container } from './styles';
-import { Header, Searchbar, Card } from './components';
+import { Header, SearchBar, Card } from './components';
 
 export function Home() {
   const [search, setSearch] = useState('');
+
   return (
     <Container>
       <StatusBar
@@ -13,7 +14,7 @@ export function Home() {
         translucent
       />
       <Header />
-      <Searchbar
+      <SearchBar
         placeholder="Search Pokémon"
         onChangeText={setSearch}
         value={search}
