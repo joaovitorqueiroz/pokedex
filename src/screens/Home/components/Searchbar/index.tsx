@@ -1,16 +1,11 @@
-import React from 'react';
+import { TextInputProps } from 'react-native';
 import { Container, IconSearch, InputText } from './styles';
 
-const Searchbar: React.FC = () => {
+const Searchbar: React.FC<TextInputProps> = props => {
   return (
     <Container>
       <IconSearch />
-
-      <InputText testID="input-text" placeholder={'name or number'} />
-
-      {/* <ButtonSearch testID="button-search" onPress={onPress}>
-        <Icon />
-      </ButtonSearch> */}
+      <InputText testID="input-text" {...props} />
     </Container>
   );
 };

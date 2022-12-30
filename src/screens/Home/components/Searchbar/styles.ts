@@ -15,7 +15,7 @@ export const Container = styled.View`
         padding-left: 12px;
       `}
 
-  background-color: #e9ebf1;
+  background-color: ${({ theme }) => theme.colors.primary_100};
   border-radius: 10px;
 `;
 
@@ -31,5 +31,3 @@ export const InputText = styled.TextInput`
   font-size: ${RFValue(16)}px;
   color: ${({ theme }) => theme.colors.primary};
 `;
-
-export const ButtonSearch = styled.TouchableOpacity``;
