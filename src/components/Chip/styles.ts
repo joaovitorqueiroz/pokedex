@@ -13,8 +13,11 @@ export const Container = styled.View<ContainerProps>`
   background-color: ${({ color }) => color};
   padding: 4px 0px 6px 0px;
 `;
-export const Text = styled.Text`
+
+type TextProps = {
+  color: string;
+};
+export const Text = styled.Text<TextProps>`
   font-size: ${RFValue(11)}px;
-  //font-weight: bold;
-  color: white;
+  color: ${({ color }) => color};
 `;

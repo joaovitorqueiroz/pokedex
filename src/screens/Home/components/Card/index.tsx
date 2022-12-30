@@ -31,7 +31,7 @@ const Card: React.FC = () => {
         <PokemonName textColor={pallet.text}>Bulbasaur</PokemonName>
         <PokemonTypesContainer>
           {types.map(type => (
-            <Chip text={type} color={pallet.support} />
+            <Chip text={type} color={pallet.support} textColor={pallet.text} />
           ))}
         </PokemonTypesContainer>
         <ContainerImages>

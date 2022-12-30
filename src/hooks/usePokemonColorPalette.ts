@@ -72,7 +72,7 @@ export default function usePokemonColorPalette(color: ColorOptions) {
       primary: theme?.colors?.white_100,
       secondary: theme?.colors?.white_200,
       support: theme?.colors?.white_300,
-      text: theme?.colors?.white,
+      text: theme?.colors?.text,
     },
     yellow: {
       primary: theme?.colors?.yellow_100,
