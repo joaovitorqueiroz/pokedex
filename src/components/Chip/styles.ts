@@ -11,7 +11,8 @@ export const Container = styled.View<ContainerProps>`
   margin-bottom: 8px;
   border-radius: 10px;
   background-color: ${({ color }) => color};
-  padding: 4px 0px 6px 0px;
+  padding: 4px 8px 6px 8px;
+  margin-right: 10px;
 `;
 
 type TextProps = {

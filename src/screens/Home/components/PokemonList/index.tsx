@@ -7,6 +7,7 @@ import { ColorOptions } from 'src/models/ColorOptions';
 import Card from '../Card';
 
 import { List } from './styles';
+import usePokemonColorPalette from 'src/hooks/usePokemonColorPalette';
 
 type PokemonCardProps = {
   name: string;
@@ -18,13 +19,19 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ name }) => {
   const { data: pokemonSpeciesDetails } = useGetPokemonSpeciesDetailsByName(
     pokemonDetails?.id,
   );
+  const color = pokemonSpeciesDetails?.color?.name as ColorOptions;
+  const palette = usePokemonColorPalette(color ?? 'default');
 
   const types = pokemonDetails?.types
     ? pokemonDetails?.types.map(type => type.type.name)
     : [];
 
   const handleOpenDetails = (id: number | undefined) => {
-    navigation.navigate('details', { id });
+    navigation.navigate('details', {
+      id,
+      palette,
+      name,
+    });
   };
 
   return (
@@ -32,7 +39,7 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ name }) => {
       name={name}
       id={pokemonDetails?.id}
       types={types}
-      color={pokemonSpeciesDetails?.color?.name as ColorOptions}
+      palette={palette}
       onPress={() => handleOpenDetails(pokemonDetails?.id)}
     />
   );

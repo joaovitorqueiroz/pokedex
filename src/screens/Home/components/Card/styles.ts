@@ -15,14 +15,10 @@ export const Container = styled.TouchableOpacity<ContainerProps>`
 
 export const PokemonIdContainer = styled.View`
   position: absolute;
+  justify-content: center;
   align-self: center;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 8px;
   height: 20px;
   top: -10px;
-  justify-content: center;
-  background-color: ${({ theme }) => theme.colors.yellow_400};
 `;
 
 export const Content = styled.View`
@@ -32,12 +28,6 @@ export const Content = styled.View`
   padding-left: 16px;
   border-radius: 16px;
   overflow: hidden;
-`;
-
-export const PokemonId = styled.Text`
-  font-size: ${RFValue(12)}px;
-  font-weight: bold;
-  color: ${({ theme }) => theme.colors.primary};
 `;
 
 type PokemonNameProps = {
@@ -50,7 +40,7 @@ export const PokemonName = styled.Text<PokemonNameProps>`
 `;
 
 export const PokemonTypesContainer = styled.View`
-  width: 39%;
+  width: 45%;
   padding-top: 10px;
 `;
 

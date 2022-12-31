@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components/native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { Dimensions, Platform } from 'react-native';
 
-const weightScreen = Dimensions.get('screen').width;
+const widthScreen = Dimensions.get('screen').width;
 
 const POKE_BALL_SIZE = 200;
 
@@ -24,7 +24,7 @@ export const TextContent = styled.Text`
 
 export const PokeBall = styled.Image`
   position: absolute;
-  left: ${weightScreen - 150}px;
+  left: ${widthScreen - 150}px;
   top: -50px;
   height: ${POKE_BALL_SIZE}px;
   width: ${POKE_BALL_SIZE}px;

@@ -1,14 +1,11 @@
-import usePokemonColorPalette from 'src/hooks/usePokemonColorPalette';
 import useUriImagePokemon from 'src/hooks/useUriImagePokemon';
-import { Chip } from 'src/components';
-import { ColorOptions } from 'src/models/ColorOptions';
-import { capitalize, formatId } from 'src/utils';
+import { Chip, PokemonId } from 'src/components';
+import { capitalize } from 'src/utils';
 
 import {
   Container,
   Content,
   PokemonIdContainer,
-  PokemonId,
   PokemonName,
   PokemonTypesContainer,
   ContainerImages,
@@ -17,33 +14,33 @@ import {
 } from './styles';
 
 import pokeBallPath from 'src/assets/poke_ball_white.png';
+import { PokemonColorPalette } from 'src/models/PokemonColorPalette';
 
 type CardProps = {
   name: string;
   id?: number;
   types: string[];
-  color: ColorOptions | undefined;
+  palette: PokemonColorPalette;
   onPress: () => void;
 };
 
-const Card: React.FC<CardProps> = ({ name, id, types, color, onPress }) => {
-  const pallet = usePokemonColorPalette(color ?? 'default');
+const Card: React.FC<CardProps> = ({ name, id, types, palette, onPress }) => {
   const { uriImagePng } = useUriImagePokemon(String(id ?? 0));
 
   return (
-    <Container backgroundColor={pallet.primary} onPress={onPress}>
+    <Container backgroundColor={palette.primary} onPress={onPress}>
       <PokemonIdContainer>
-        <PokemonId>{formatId(id || 0)}</PokemonId>
+        <PokemonId id={id ?? 0} />
       </PokemonIdContainer>
       <Content>
-        <PokemonName textColor={pallet.text}>{capitalize(name)}</PokemonName>
+        <PokemonName textColor={palette.text}>{capitalize(name)}</PokemonName>
         <PokemonTypesContainer>
           {types.map(type => (
             <Chip
               key={type}
               text={type}
-              color={pallet.support}
-              textColor={pallet.text}
+              color={palette.support}
+              textColor={palette.text}
             />
           ))}
         </PokemonTypesContainer>
