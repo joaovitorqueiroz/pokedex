@@ -30,6 +30,9 @@ export function AppRoutes() {
         name="details"
         component={Details}
         options={{
+          headerTransparent: true,
+          headerTitle: '',
+          headerBackTitleVisible: false,
           gestureEnabled: true,
         }}
       />
