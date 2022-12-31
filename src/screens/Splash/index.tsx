@@ -1,4 +1,4 @@
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, CommonActions } from '@react-navigation/native';
 
 import Animated, {
   useAnimatedStyle,
@@ -15,7 +15,12 @@ export function Splash() {
   const navigation = useNavigation();
 
   function initApp() {
-    navigation.navigate('home');
+    navigation.dispatch(() =>
+      CommonActions.reset({
+        index: 1,
+        routes: [{ name: 'home' }],
+      }),
+    );
   }
 
   const logoStyle = useAnimatedStyle(() => {
