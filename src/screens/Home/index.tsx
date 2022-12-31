@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { StatusBar, View } from 'react-native';
+import { StatusBar } from 'react-native';
 import { Container } from './styles';
-import { Header, SearchBar, Card } from './components';
+import { Header, SearchBar, PokemonList } from './components';
 
 export function Home() {
   const [search, setSearch] = useState('');
@@ -21,15 +21,7 @@ export function Home() {
         autoCorrect={false}
         autoFocus={false}
       />
-      <View
-        style={{
-          flexDirection: 'row',
-          paddingHorizontal: 16,
-          justifyContent: 'space-between',
-        }}>
-        <Card />
-        <Card />
-      </View>
+      <PokemonList />
     </Container>
   );
 }

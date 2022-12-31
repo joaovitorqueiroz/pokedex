@@ -8,6 +8,7 @@ type ContainerProps = {
 export const Container = styled.View<ContainerProps>`
   width: 48%;
   height: 130px;
+  margin-top: 20px;
   border-radius: 16px;
   background-color: ${({ backgroundColor }) => backgroundColor};
 `;
