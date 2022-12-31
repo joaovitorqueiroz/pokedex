@@ -1,3 +1,4 @@
+import { capitalize } from 'src/utils';
 import { Container, Text } from './styles';
 
 type ChipProps = {
@@ -9,7 +10,7 @@ type ChipProps = {
 const Chip: React.FC<ChipProps> = ({ color, text, textColor }) => {
   return (
     <Container color={color}>
-      <Text color={textColor}>{text}</Text>
+      <Text color={textColor}>{capitalize(text)}</Text>
     </Container>
   );
 };

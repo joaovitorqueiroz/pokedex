@@ -5,9 +5,9 @@ type ContainerProps = {
   backgroundColor: string;
 };
 
-export const Container = styled.View<ContainerProps>`
+export const Container = styled.TouchableOpacity<ContainerProps>`
   width: 48%;
-  height: 130px;
+  height: 140px;
   margin-top: 20px;
   border-radius: 16px;
   background-color: ${({ backgroundColor }) => backgroundColor};
@@ -68,7 +68,7 @@ export const PokeBall = styled.Image`
 
 export const PokemonImage = styled.Image`
   position: absolute;
-  top: 5px;
+  top: 10px;
   left: 40%;
   width: 80px;
   height: 80px;

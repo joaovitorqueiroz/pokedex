@@ -1,5 +1,6 @@
 import React from 'react';
 import useGetPokemon from 'src/hooks/useGetPokemon';
+import { useNavigation } from '@react-navigation/native';
 import useGetPokemonDetailsByName from 'src/hooks/useGetPokemonDetailsByName';
 import useGetPokemonSpeciesDetailsByName from 'src/hooks/useGetPokemonSpeciesDetailsByName';
 import { ColorOptions } from 'src/models/ColorOptions';
@@ -12,26 +13,28 @@ type PokemonCardProps = {
 };
 
 const PokemonCard: React.FC<PokemonCardProps> = ({ name }) => {
-  const { data: pokemonDetails, isLoading: isLoadingPokemonDetails } =
-    useGetPokemonDetailsByName(name);
-  const {
-    data: pokemonSpeciesDetails,
-    isLoading: isLoadingPokemonSpeciesDetails,
-  } = useGetPokemonSpeciesDetailsByName(pokemonDetails?.id);
+  const navigation = useNavigation();
+  const { data: pokemonDetails } = useGetPokemonDetailsByName(name);
+  const { data: pokemonSpeciesDetails } = useGetPokemonSpeciesDetailsByName(
+    pokemonDetails?.id,
+  );
 
   const types = pokemonDetails?.types
     ? pokemonDetails?.types.map(type => type.type.name)
     : [];
 
+  const handleOpenDetails = (id: number | undefined) => {
+    navigation.navigate('details', { id });
+  };
+
   return (
-    !(isLoadingPokemonSpeciesDetails && isLoadingPokemonDetails) && (
-      <Card
-        name={name}
-        id={pokemonDetails?.id}
-        types={types}
-        color={pokemonSpeciesDetails?.color?.name as ColorOptions}
-      />
-    )
+    <Card
+      name={name}
+      id={pokemonDetails?.id}
+      types={types}
+      color={pokemonSpeciesDetails?.color?.name as ColorOptions}
+      onPress={() => handleOpenDetails(pokemonDetails?.id)}
+    />
   );
 };
 

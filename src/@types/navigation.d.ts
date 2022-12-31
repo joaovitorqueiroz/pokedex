@@ -3,6 +3,7 @@ export declare global {
     interface RootParamList {
       splash: undefined;
       home: undefined;
+      details: { id: number | undefined };
     }
   }
 }

@@ -2,6 +2,7 @@ import usePokemonColorPalette from 'src/hooks/usePokemonColorPalette';
 import useUriImagePokemon from 'src/hooks/useUriImagePokemon';
 import { Chip } from 'src/components';
 import { ColorOptions } from 'src/models/ColorOptions';
+import { capitalize, formatId } from 'src/utils';
 
 import {
   Container,
@@ -22,20 +23,20 @@ type CardProps = {
   id?: number;
   types: string[];
   color: ColorOptions | undefined;
+  onPress: () => void;
 };
 
-const Card: React.FC<CardProps> = ({ name, id, types, color }) => {
+const Card: React.FC<CardProps> = ({ name, id, types, color, onPress }) => {
   const pallet = usePokemonColorPalette(color ?? 'default');
   const { uriImagePng } = useUriImagePokemon(String(id ?? 0));
-  console.log('color', color);
 
   return (
-    <Container backgroundColor={pallet.primary}>
+    <Container backgroundColor={pallet.primary} onPress={onPress}>
       <PokemonIdContainer>
-        <PokemonId>{`#00${id}`}</PokemonId>
+        <PokemonId>{formatId(id || 0)}</PokemonId>
       </PokemonIdContainer>
       <Content>
-        <PokemonName textColor={pallet.text}>{name}</PokemonName>
+        <PokemonName textColor={pallet.text}>{capitalize(name)}</PokemonName>
         <PokemonTypesContainer>
           {types.map(type => (
             <Chip
