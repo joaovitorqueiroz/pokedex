@@ -40,7 +40,9 @@ export const PokemonName = styled.Text<PokemonNameProps>`
 `;
 
 export const PokemonTypesContainer = styled.View`
-  width: 45%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 60%;
   padding-top: 10px;
 `;
 

@@ -28,7 +28,10 @@ const Card: React.FC<CardProps> = ({ name, id, types, palette, onPress }) => {
   const { uriImagePng } = useUriImagePokemon(String(id ?? 0));
 
   return (
-    <Container backgroundColor={palette.primary} onPress={onPress}>
+    <Container
+      backgroundColor={palette.primary}
+      onPress={onPress}
+      testID="card">
       <PokemonIdContainer>
         <PokemonId id={id ?? 0} />
       </PokemonIdContainer>
@@ -45,8 +48,11 @@ const Card: React.FC<CardProps> = ({ name, id, types, palette, onPress }) => {
           ))}
         </PokemonTypesContainer>
         <ContainerImages>
-          <PokeBall source={pokeBallPath} />
-          <PokemonImage source={{ uri: uriImagePng }} />
+          <PokeBall accessibilityLabel="poke-ball" source={pokeBallPath} />
+          <PokemonImage
+            accessibilityLabel="pokemon-image"
+            source={{ uri: uriImagePng }}
+          />
         </ContainerImages>
       </Content>
     </Container>

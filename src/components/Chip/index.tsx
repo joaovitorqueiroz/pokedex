@@ -9,8 +9,10 @@ type ChipProps = {
 
 const Chip: React.FC<ChipProps> = ({ color, text, textColor }) => {
   return (
-    <Container color={color}>
-      <Text color={textColor}>{capitalize(text)}</Text>
+    <Container color={color} accessibilityLabel="chip">
+      <Text color={textColor} testID="chip-text">
+        {capitalize(text)}
+      </Text>
     </Container>
   );
 };
