@@ -3,6 +3,7 @@ import { StatusBar } from 'react-native';
 import { Container } from './styles';
 import { Header, SearchBar, PokemonList } from './components';
 import useFetchAllPokemons from 'src/hooks/useFetchAllPokemons';
+import { Loading } from 'src/components';
 
 export function Home() {
   const [search, setSearch] = useState('');
@@ -45,7 +46,7 @@ export function Home() {
         autoCorrect={false}
         autoFocus={false}
       />
-      {!isLoading && <PokemonList pokemonData={pokemonData} />}
+      {isLoading ? <Loading /> : <PokemonList pokemonData={pokemonData} />}
     </Container>
   );
 }
