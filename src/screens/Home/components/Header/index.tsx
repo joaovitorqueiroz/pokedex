@@ -11,7 +11,7 @@ const Header: React.FC = () => {
       <SafeAreaView />
       <PokeBall source={pokeBallPath} />
       <Image source={logoPath} />
-      <TextContent>Search for a Pokémon by name</TextContent>
+      <TextContent>Search for a Pokémon by name or number</TextContent>
     </Container>
   );
 };
