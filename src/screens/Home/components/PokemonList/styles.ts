@@ -1,9 +1,9 @@
 import styled from 'styled-components/native';
 import { FlatList, FlatListProps } from 'react-native';
-import { Pokemon } from 'src/models/PokemonList';
+import { PokemonInfo } from 'src/models/PokemonList';
 
 export const List = styled(
-  FlatList as new (props: FlatListProps<Pokemon>) => FlatList<Pokemon>,
+  FlatList as new (props: FlatListProps<PokemonInfo>) => FlatList<PokemonInfo>,
 ).attrs({
   contentContainerStyle: { paddingBottom: 20 },
   columnWrapperStyle: {

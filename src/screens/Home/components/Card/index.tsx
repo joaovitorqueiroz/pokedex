@@ -1,6 +1,6 @@
-import useUriImagePokemon from 'src/hooks/useUriImagePokemon';
 import { Chip, PokemonId } from 'src/components';
 import { capitalize } from 'src/utils';
+import { memo } from 'react';
 
 import {
   Container,
@@ -15,6 +15,7 @@ import {
 
 import pokeBallPath from 'src/assets/poke_ball_white.png';
 import { PokemonColorPalette } from 'src/models/PokemonColorPalette';
+import useUriImagePokemon from 'src/hooks/useUriImagePokemon';
 
 type CardProps = {
   name: string;
@@ -25,7 +26,7 @@ type CardProps = {
 };
 
 const Card: React.FC<CardProps> = ({ name, id, types, palette, onPress }) => {
-  const { uriImagePng } = useUriImagePokemon(String(id ?? 0));
+  const uri = useUriImagePokemon(id ?? 0);
 
   return (
     <Container
@@ -49,14 +50,13 @@ const Card: React.FC<CardProps> = ({ name, id, types, palette, onPress }) => {
         </PokemonTypesContainer>
         <ContainerImages>
           <PokeBall accessibilityLabel="poke-ball" source={pokeBallPath} />
-          <PokemonImage
-            accessibilityLabel="pokemon-image"
-            source={{ uri: uriImagePng }}
-          />
+          <PokemonImage accessibilityLabel="pokemon-image" source={{ uri }} />
         </ContainerImages>
       </Content>
     </Container>
   );
 };
 
-export default Card;
+export default memo(Card, (prevProps, nextProps) => {
+  return nextProps.id === prevProps.id;
+});

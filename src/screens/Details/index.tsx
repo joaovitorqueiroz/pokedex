@@ -2,7 +2,6 @@ import React from 'react';
 import { useRoute } from '@react-navigation/native';
 import { DetailsParams } from 'src/@types/navigation';
 import useUriImagePokemon from 'src/hooks/useUriImagePokemon';
-import useGetPokemonSpeciesDetailsByName from 'src/hooks/useGetPokemonSpeciesDetailsByName';
 import { Chip, PokemonId } from 'src/components';
 import { capitalize } from 'src/utils';
 
@@ -19,21 +18,12 @@ import {
 } from './styles';
 
 import pokeBallPath from 'src/assets/poke_ball_white.png';
-import useGetPokemonDetailsByName from 'src/hooks/useGetPokemonDetailsByName';
 
 const Details: React.FC = () => {
   const route = useRoute();
   const { palette, id, name } = route.params as DetailsParams;
-  const { uriImagePng } = useUriImagePokemon(String(id ?? 0));
-  const { data: pokemonDetails } = useGetPokemonDetailsByName(name ?? '');
-  //TODO fix name function
-  const { data: pokemonSpeciesDetails } = useGetPokemonSpeciesDetailsByName(
-    pokemonDetails?.id,
-  );
-
-  const types = pokemonDetails?.types
-    ? pokemonDetails?.types.map(type => type.type.name)
-    : [];
+  const uri = useUriImagePokemon(id ?? 0);
+  const types = ['bug', 'fire'];
 
   return (
     <Container backgroundColor={palette.primary}>
@@ -42,7 +32,7 @@ const Details: React.FC = () => {
         <SafeArea>
           <IdentityContainer>
             <PokemonName textColor={palette.text}>
-              {capitalize(pokemonSpeciesDetails?.name ?? '')}
+              {capitalize(name ?? '')}
             </PokemonName>
             <PokemonId id={id ?? 0} />
           </IdentityContainer>
@@ -59,7 +49,7 @@ const Details: React.FC = () => {
         </SafeArea>
       </HeaderContainer>
       <Content>
-        <PokemonImage source={{ uri: uriImagePng }} />
+        <PokemonImage source={{ uri }} />
       </Content>
     </Container>
   );

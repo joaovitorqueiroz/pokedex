@@ -8,26 +8,23 @@ jest.mock('react-native-responsive-fontsize', () => ({
 }));
 
 describe('Chip', () => {
-
-
   const setup = (propOverrides: any) => {
     const defaultProps = {
       ...propOverrides,
     };
 
-    const onPress = jest.fn();
-
     return render(
       <ThemeProvider theme={themeDefault}>
-        <Chip         
-          {...defaultProps}
-        />
+        <Chip {...defaultProps} />
       </ThemeProvider>,
     );
   };
   it('should render correctly', () => {
-    const { getByText, getByTestId,getByLabelText } =
-      setup({text: "some text", color: '#0F0', textColor: '#000'});
+    const { getByText, getByTestId, getByLabelText } = setup({
+      text: 'some text',
+      color: '#0F0',
+      textColor: '#000',
+    });
 
     expect(getByText('Some text')).toBeTruthy();
     expect(getByTestId('chip-text').props).toMatchObject({
@@ -37,7 +34,7 @@ describe('Chip', () => {
     });
     expect(getByLabelText('chip').props).toMatchObject({
       style: expect.arrayContaining([
-        expect.objectContaining({ backgroundColor: "#0F0" }),
+        expect.objectContaining({ backgroundColor: '#0F0' }),
       ]),
     });
     expect(getByTestId('chip-text').props).toMatchObject({
@@ -45,5 +42,5 @@ describe('Chip', () => {
         expect.objectContaining({ color: '#000' }),
       ]),
     });
-  });  
+  });
 });
