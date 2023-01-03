@@ -44,6 +44,15 @@ Abaixo uma lista das funcionalidades que esse projeto possui separadas por featu
  <b>Detalhes do Pokemon</b>
 </h4>
 
+### Componente de Loading
+
+- Enquanto o usuário aguarda a finalização da requisição um componente de loading é exibido na tela.
+
+<h4 align="center">
+<img src="https://user-images.githubusercontent.com/58531490/210369147-55d2fc6e-efe5-499a-8f2f-059a3615dda6.gif" width="300px" /><br>
+ <b>Componente de Loading</b>
+</h4>
+
 &nbsp;
 ## Instalação
 
@@ -88,7 +97,7 @@ O projeto possui alguns testes e podem ser executados pelo comando:
   yarn run test
 ```
 
-## Stack utilizada
+## Tecnologias utilizadas
 
 - React Native
 - TypeScript
