@@ -19,6 +19,7 @@ export const ProgressBarContainer = styled.View`
   align-items: center;
 `;
 export const Value = styled.Text`
+  color: ${({ theme }) => theme.colors.text};
   padding-right: 8px;
 `;
 export const ProgressBar = styled.View`
