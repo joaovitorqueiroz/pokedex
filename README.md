@@ -14,11 +14,21 @@ Abaixo uma lista das funcionalidades que esse projeto possui ordenadas por featu
 
 - Exibe uma lista de pokemons ordenados pelo seu número nacional da Pokédex.
 
+<h4 align="center">
+<img src="https://user-images.githubusercontent.com/58531490/210359098-fc53e317-7d5f-4115-afec-536fb462eae8.png" width="300px" /><br>
+ <b>Lista de pokemons</b>
+</h4>
+
 ### Busca por pokemons
 
 - Permite que sejam executados buscas por pokemons informando uma dessas informações:
   * Número nacional da Pokédex.
   * Nome completo ou uma parte dele.
+
+<h4 align="center">
+<img src="https://user-images.githubusercontent.com/58531490/210357801-f2f72c14-4e11-4b75-989f-493306c04da1.png" width="300px" /><br>
+ <b>Busca de pokemons pelo nome</b>
+</h4>
 
 ### Detalhes do pokemon
 
@@ -30,6 +40,7 @@ Abaixo uma lista das funcionalidades que esse projeto possui ordenadas por featu
   * Estatisticas do pokemon (Hp, Ataque, Defesa, Ataque Especial, Defesa Especial, Velocidade)
 
 
+&nbsp;
 ## Instalação
 
 Este projeto utiliza o yarn.
@@ -81,8 +92,8 @@ O projeto possui alguns testes e podem ser executados pelo comando:
 - React native reanimated
 - React native vector icons
 - Lottie: Para animações personalizadas. 
-- GraphQL
-- React Query: Para gerenciar as requisições criando estados em cache melhorando a performance e simplificando atualização de dados mediante alguma mudança.
+- GraphQL, Graphql-request: Para otimizar os requests permitindo a busca apenas de informações necessarias. 
+- React Query: Por ser uma aplicação mais simples opitei por nao utilizar o redux e usar apenas o react query para gerenciar as requisições criando estados em cache melhorando a performance e simplificando atualização de dados mediante alguma mudança.
 - Jest e React Native Testing Library: Para testes unitários e de integração. 
 
 Além disso, para garantir um melhorar a padronização do código e sanitização foram usadas as tecnologias abaixo:
