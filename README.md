@@ -88,6 +88,8 @@ Para executar o aplicativo no IOS execute o comando abaixo:
   npx react-native run-ios
 ```
 
+&nbsp;
+
 ## Execução dos testes
 
 
@@ -96,6 +98,10 @@ O projeto possui alguns testes e podem ser executados pelo comando:
 ```bash
   yarn run test
 ```
+
+ Os testes também são executados automaticamente pelo GitHub Actions assim que um push para branch 'main' é realizado.
+
+&nbsp;
 
 ## Tecnologias utilizadas
 
