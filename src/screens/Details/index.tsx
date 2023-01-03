@@ -38,7 +38,7 @@ const Details: React.FC = () => {
         <SafeArea>
           <IdentityContainer>
             <PokemonName textColor={palette.text}>
-              {capitalize(name ?? '')}
+              {capitalize(name)}
             </PokemonName>
             <PokemonId id={id ?? 0} />
           </IdentityContainer>

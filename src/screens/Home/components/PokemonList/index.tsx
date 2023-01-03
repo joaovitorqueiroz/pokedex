@@ -15,9 +15,9 @@ const RenderItem: React.FC<RenderItemProps> = memo(
   ({ item }) => {
     const name = item.name;
     const id = item.id;
-    const types = item.pokemon_v2_pokemontypes.map(
-      type => type.pokemon_v2_type.name,
-    );
+    const types =
+      item?.pokemon_v2_pokemontypes &&
+      item?.pokemon_v2_pokemontypes.map(type => type.pokemon_v2_type.name);
     const color = item.pokemon_v2_pokemonspecy.pokemon_v2_pokemoncolor
       .name as ColorOptions;
     const palette = usePokemonColorPalette(color);

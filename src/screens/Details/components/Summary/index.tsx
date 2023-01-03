@@ -14,12 +14,10 @@ type SummaryProps = {
 const Summary: React.FC<SummaryProps> = ({ data }) => {
   return (
     <Container>
-      <Description>
-        {capitalize(formattedText(data.description ?? ''))}
-      </Description>
+      <Description>{capitalize(formattedText(data?.description))}</Description>
       <ScrollView contentContainerStyle={{ paddingBottom: 120 }}>
-        <Physiology weight={data.weight} height={data.height} />
-        {data.stats &&
+        <Physiology weight={data?.weight} height={data?.height} />
+        {data?.stats &&
           data.stats?.map(item => (
             <Stats
               value={item.base_stat}
