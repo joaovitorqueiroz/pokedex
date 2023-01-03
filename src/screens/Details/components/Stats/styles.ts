@@ -10,6 +10,7 @@ export const Container = styled.View`
 `;
 
 export const Title = styled.Text`
+  color: ${({ theme }) => theme.colors.text};
   font-size: ${RFValue(13)}px;
 `;
 export const ProgressBarContainer = styled.View`

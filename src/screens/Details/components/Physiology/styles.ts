@@ -17,5 +17,6 @@ export const ContainerInfo = styled.View`
 `;
 
 export const Title = styled.Text`
+  color: ${({ theme }) => theme.colors.text};
   margin-bottom: 8px;
 `;
