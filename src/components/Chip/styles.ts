@@ -23,5 +23,6 @@ type TextProps = {
 };
 export const Text = styled.Text<TextProps>`
   font-size: ${RFValue(11)}px;
+  font-weight: 600;
   color: ${({ color }) => color};
 `;

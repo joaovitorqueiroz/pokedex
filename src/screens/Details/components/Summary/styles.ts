@@ -5,7 +5,7 @@ export const Container = styled.View``;
 
 export const Description = styled.Text`
   margin-top: 40px;
-  font-size: ${RFValue(13)}px;
+  font-size: ${RFValue(14)}px;
   color: ${({ theme }) => theme.colors.primary};
   text-align: center;
 `;

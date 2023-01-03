@@ -1,5 +1,6 @@
 import React from 'react';
 import * as Progress from 'react-native-progress';
+import { capitalize } from 'src/utils';
 import { useTheme } from 'styled-components';
 
 import { Container, Title, ProgressBarContainer, Value } from './styles';
@@ -24,7 +25,7 @@ const Stats: React.FC<StatsProps> = ({ value, title }) => {
 
   return (
     <Container>
-      <Title>{title}</Title>
+      <Title>{capitalize(title)}</Title>
       <ProgressBarContainer>
         <Value>{value}</Value>
         <Progress.Bar

@@ -1,3 +1,4 @@
+import { RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
@@ -8,7 +9,9 @@ export const Container = styled.View`
   justify-content: space-between;
 `;
 
-export const Title = styled.Text``;
+export const Title = styled.Text`
+  font-size: ${RFValue(13)}px;
+`;
 export const ProgressBarContainer = styled.View`
   flex-direction: row;
   justify-content: center;
