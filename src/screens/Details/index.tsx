@@ -4,6 +4,7 @@ import { DetailsParams } from 'src/@types/navigation';
 import useUriImagePokemon from 'src/hooks/useUriImagePokemon';
 import { Chip, PokemonId } from 'src/components';
 import { capitalize } from 'src/utils';
+import { Summary } from './components';
 
 import {
   Container,
@@ -39,6 +40,8 @@ const Details: React.FC = () => {
           <PokemonTypesContainer>
             {types.map(type => (
               <Chip
+                columnGap={8}
+                rowGap={10}
                 key={type}
                 text={type}
                 color={palette.support}
@@ -50,6 +53,7 @@ const Details: React.FC = () => {
       </HeaderContainer>
       <Content>
         <PokemonImage source={{ uri }} />
+        <Summary />
       </Content>
     </Container>
   );

@@ -41,6 +41,8 @@ const Card: React.FC<CardProps> = ({ name, id, types, palette, onPress }) => {
         <PokemonTypesContainer>
           {types.map(type => (
             <Chip
+              columnGap={8}
+              rowGap={10}
               key={type}
               text={type}
               color={palette.support}
