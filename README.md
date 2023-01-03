@@ -8,7 +8,7 @@ Este projeto utiliza [pokéapi](https://pokeapi.co/) com graphQL.
 
 ## Funcionalidades
 
-Abaixo uma lista das funcionalidades que esse projeto possui ordenadas por features.
+Abaixo uma lista das funcionalidades que esse projeto possui separadas por features.
 
 ### Listar pokemons
 
@@ -21,7 +21,7 @@ Abaixo uma lista das funcionalidades que esse projeto possui ordenadas por featu
 
 ### Busca por pokemons
 
-- Permite que sejam executados buscas por pokemons informando uma dessas informações:
+- Permite que sejam executado buscas por pokemons digitando uma dessas informações no campo de busca:
   * Número nacional da Pokédex.
   * Nome completo ou uma parte dele.
 
@@ -37,8 +37,12 @@ Abaixo uma lista das funcionalidades que esse projeto possui ordenadas por featu
   * Tipos do pokemon.
   * Peso.
   * Altura.
-  * Estatisticas do pokemon (Hp, Ataque, Defesa, Ataque Especial, Defesa Especial, Velocidade)
+  * Características do pokemon (Hp, Ataque, Defesa, Ataque Especial, Defesa Especial, Velocidade)
 
+<h4 align="center">
+<img src="https://user-images.githubusercontent.com/58531490/210366463-5642f23a-b106-4dd6-b569-0bb1a6ac3a37.png" width="300px" /><br>
+ <b>Detalhes do Pokemon</b>
+</h4>
 
 &nbsp;
 ## Instalação
@@ -93,7 +97,7 @@ O projeto possui alguns testes e podem ser executados pelo comando:
 - React native vector icons
 - Lottie: Para animações personalizadas. 
 - GraphQL, Graphql-request: Para otimizar os requests permitindo a busca apenas de informações necessarias. 
-- React Query: Por ser uma aplicação mais simples opitei por nao utilizar o redux e usar apenas o react query para gerenciar as requisições criando estados em cache melhorando a performance e simplificando atualização de dados mediante alguma mudança.
+- React Query: Por ser uma aplicação mais simples optei por não utilizar o redux e usar apenas o react query para gerenciar as requisições criando estados em cache garantindo performance e simplificando atualização de dados mediante alguma mudança.
 - Jest e React Native Testing Library: Para testes unitários e de integração. 
 
 Além disso, para garantir um melhorar a padronização do código e sanitização foram usadas as tecnologias abaixo:
