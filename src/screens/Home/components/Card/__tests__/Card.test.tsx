@@ -84,4 +84,70 @@ describe('Card', () => {
       ]),
     });
   });
+
+  describe('When the id property changes.', () => {
+    it('should re-render correctly new props.', () => {
+      const { getByText, rerender } = setup({});
+
+      expect(getByText('Charmander')).toBeTruthy();
+
+      const newName = 'bulbasaur';
+      const newId = 1;
+      const newTypes = ['fire', 'flying'];
+      const newPalette = {
+        primary: '#f00',
+        support: '#0f0',
+        secondary: '#00f',
+        text: '#000',
+      };
+      const onPress = jest.fn();
+
+      rerender(
+        <ThemeProvider theme={themeDefault}>
+          <Card
+            name={newName}
+            id={newId}
+            types={newTypes}
+            palette={newPalette}
+            onPress={onPress}
+          />
+        </ThemeProvider>,
+      );
+
+      expect(getByText('Bulbasaur')).toBeTruthy();
+    });
+  });
+
+  describe('When the id property NOT changes.', () => {
+    it('should NOT re-render the component.', () => {
+      const { getByText, queryByText, rerender } = setup({});
+
+      expect(getByText('Charmander')).toBeTruthy();
+
+      const newName = 'bulbasaur';
+      const newId = 4;
+      const newTypes = ['fire', 'flying'];
+      const newPalette = {
+        primary: '#f00',
+        support: '#0f0',
+        secondary: '#00f',
+        text: '#000',
+      };
+      const onPress = jest.fn();
+
+      rerender(
+        <ThemeProvider theme={themeDefault}>
+          <Card
+            name={newName}
+            id={newId}
+            types={newTypes}
+            palette={newPalette}
+            onPress={onPress}
+          />
+        </ThemeProvider>,
+      );
+
+      expect(queryByText('Bulbasaur')).toBeFalsy();
+    });
+  });
 });
