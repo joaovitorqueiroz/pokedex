@@ -64,17 +64,24 @@ Clone o repositório para um diretório em sua máquina e execute o seguinte com
   yarn install
 ```
 
-Ao final da Instalação para executar o projeto execute o seguinte comando:
+#### **Passos adicionais para instalação no Mac-OS:**
 
-```bash
-  cd ios && pod install
-```
 
-Ao final das instalações dos arquivos de pod, volte a pasta raiz com o seguinte comando:
+  Ao final da Instalação execute o seguinte comando:
 
-```bash
-  cd ..
-```
+  ```bash
+    cd ios && pod install
+  ```
+
+  Ao final das instalações dos arquivos de pod, volte a pasta raiz com o seguinte comando:
+
+  ```bash
+    cd ..
+  ```
+
+&nbsp;
+
+## Execução do Projeto
 
 Para executar o aplicativo no Android execute o comando abaixo:
 
